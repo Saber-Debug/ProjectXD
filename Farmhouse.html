@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟาร์มเฮ้าส์ ขนมปังชนิดแผ่น | FitMatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleindex.css"> <style>
+        :root {
+            --primary-color: #3399FF; /* สี Cyan */
+            --dark-color: #343a40; /* สีเทาเข้ม */
+        }
+        
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .food-detail-container {
+            padding-top: 5rem;
+        }
+
+        .food-image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        
+        .food-image-section img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .food-info-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .food-info-section .subtitle {
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+        
+        .calorie-display {
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .calorie-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .quantity-control .input-group-text,
+        .quantity-control .form-select {
+            border-radius: 50px;
+        }
+
+        .social-share a {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            color: #fff;
+            background-color: #6c757d;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-share .btn-facebook { background-color: #3b5998; }
+        .social-share .btn-twitter { background-color: #00acee; }
+        .social-share .btn-green { background-color: #25D366; } /* WhatsApp */
+
+        .activity-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .activity-card {
+            text-align: center;
+        }
+
+        .activity-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            background-color: var(--dark-color);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-card p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        .nutrition-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .nutrition-section h3 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .nutrition-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            padding: 0.75rem 0;
+        }
+
+        .nutrition-label {
+            font-weight: 600;
+        }
+
+        .source-info {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-stylish">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/Screenshot_2025-08-20_184240-removebg-preview.png" alt="Fitspiration Logo" class="logo me-2">
+                    <span class="brand-text">FitMatch</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Food.html">อาหาร</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Calories-dialy.html">คำนวณแคลอรี่ต่อวัน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Program.html">โปรแกรมการออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Routine.html">ท่าออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="food-detail-container container my-5">
+        <div class="row g-4">
+            <div class="col-md-5">
+                <div class="food-image-section">
+                    <img src="https://gourmetmarketthailand.com/_next/image?url=https%3A%2F%2Fmedia-stark.gourmetmarketthailand.com%2Fproducts%2Fcover%2F8850123110108-1.webp&w=1200&q=75" alt="ฟาร์มเฮ้าส์ ขนมปังชนิดแผ่น" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="food-info-section">
+                    <h1 class="mb-0">ฟาร์มเฮ้าส์ ขนมปังชนิดแผ่น</h1>
+                    <p class="subtitle">Farmhouse Sliced Bread</p>
+
+                    <div class="d-flex align-items-end mt-4">
+                        <p class="calorie-display" id="calorie-total">130</p>
+                        <p class="calorie-label ms-2 mb-2">Calories</p>
+                    </div>
+
+                    <p class="mt-4 fw-bold">ปริมาณอาหาร</p>
+                    <div class="input-group quantity-control mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="minus-btn">-</button>
+                        <input type="text" class="form-control text-center" value="1" id="quantity-input" aria-label="Quantity">
+                        <button class="btn btn-outline-secondary" type="button" id="plus-btn">+</button>
+                        <select class="form-select ms-2" id="unit-select">
+                            <option value="1">2 แผ่น(48กรัม)</option>
+                            </select>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-5">
+            <div class="col-md-6">
+                <div class="activity-section">
+                    <h3 class="mb-3">วิธีการเผาผลาญ 130 แคลอรี่</h3>
+                    <p class="text-muted fw-bold">อ้างอิงจากข้อมูลผู้ชายน้ำหนัก 65 กก. สูง 170 ซม.</p>
+                    <div class="row text-center g-3 mt-4">
+                        <div class="col-6 col-sm-3 activity-card">
+                            <div class="icon"><i class="fas fa-walking"></i></div>
+                            <p class="time">เดิน</p>
+                            <p class="time-label">46 นาที</p>
+                        </div>
+                        <div class="col-6 col-sm-3 activity-card">
+                            <div class="icon"><i class="fas fa-biking"></i></div>
+                            <p class="time">ปั่นจักรยาน</p>
+                            <p class="time-label">27 นาที</p>
+                        </div>
+                        <div class="col-6 col-sm-3 activity-card">
+                            <div class="icon"><i class="fas fa-running"></i></div>
+                            <p class="time">วิ่ง</p>
+                            <p class="time-label">20 นาที</p>
+                        </div>
+                        <div class="col-6 col-sm-3 activity-card">
+                            <div class="icon"><i class="fas fa-swimmer"></i></div>
+                            <p class="time">ว่ายน้ำ</p>
+                            <p class="time-label">14 นาที</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="nutrition-section">
+                    <h3 class="mb-3">ข้อมูลโภชนาการ</h3>
+                    <div class="mb-3">
+                        <p class="fw-bold mb-1">ฟาร์มเฮ้าส์ ขนมปังชนิดแผ่น</p>
+                        <p class="text-muted mb-0">ปริมาณของอาหาร: <span id="nutrition-serving-size">1 x 2 แผ่น(48กรัม)</span></p>
+                    </div>
+                    <p class="text-muted">คุณค่าทางอาหารที่ได้รับ</p>
+                    <div class="nutrition-row">
+                        <span class="nutrition-label">Calories</span>
+                        <span class="nutrition-value fw-bold" id="nutrition-calories">130</span>
+                    </div>
+                    <div class="nutrition-row">
+                        <span class="nutrition-label">Fat</span>
+                        <span class="nutrition-value fw-bold" id="nutrition-fat">3 g</span>
+                    </div>
+                    <div class="nutrition-row">
+                        <span class="nutrition-label">Carbohydrate</span>
+                        <span class="nutrition-value fw-bold" id="nutrition-carbs">22 g</span>
+                    </div>
+                    <div class="nutrition-row">
+                        <span class="nutrition-label">Protein</span>
+                        <span class="nutrition-value fw-bold" id="nutrition-protein">5 g</span>
+                    </div>
+                    <p class="source-info">*ปริมาณและเวลาอาจแตกต่างกันไปในแต่ละคน อ้างอิงจากคนที่มีต้องการแคลอรี่ 2,000 แคลอรี่/วัน โดยคงความหลากหลายของกลุ่ม</p>
+                </div>
+            </div>
+        </div>
+    </main>
+     
+              
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const baseCalories = 130;
+            const baseFat = 3;
+            const baseCarbs = 22;
+            const baseProtein = 5;
+            const baseServing = "1 x 2 แผ่น(48กรัม)";
+            const baseActivityTime = {
+                'เดิน': 46,
+                'ปั่นจักรยาน': 27,
+                'วิ่ง': 20,
+                'ว่ายน้ำ': 14
+            };
+
+            const quantityInput = document.getElementById('quantity-input');
+            const unitSelect = document.getElementById('unit-select');
+            const plusBtn = document.getElementById('plus-btn');
+            const minusBtn = document.getElementById('minus-btn');
+            
+            const calorieTotal = document.getElementById('calorie-total');
+            const nutritionCalories = document.getElementById('nutrition-calories');
+            const nutritionFat = document.getElementById('nutrition-fat');
+            const nutritionCarbs = document.getElementById('nutrition-carbs');
+            const nutritionProtein = document.getElementById('nutrition-protein');
+            const nutritionServingSize = document.getElementById('nutrition-serving-size');
+
+            const activityCards = document.querySelectorAll('.activity-card');
+
+            function updateValues() {
+                const quantity = parseFloat(quantityInput.value);
+                const unitMultiplier = parseFloat(unitSelect.value);
+                
+                const totalMultiplier = quantity * unitMultiplier;
+
+                // Update calories and nutrition info
+                calorieTotal.textContent = Math.round(baseCalories * totalMultiplier);
+                nutritionCalories.textContent = Math.round(baseCalories * totalMultiplier);
+                nutritionFat.textContent = Math.round(baseFat * totalMultiplier) + " g";
+                nutritionCarbs.textContent = Math.round(baseCarbs * totalMultiplier) + " g";
+                nutritionProtein.textContent = Math.round(baseProtein * totalMultiplier) + " g";
+                nutritionServingSize.textContent = `${quantity} x 2 แผ่น(48กรัม)`;
+
+                // Update activity times
+                activityCards.forEach(card => {
+                    const activityName = card.querySelector('.time').textContent.trim();
+                    const newTime = Math.round(baseActivityTime[activityName] * totalMultiplier);
+                    card.querySelector('.time-label').textContent = `${newTime} นาที`;
+                });
+            }
+
+            // Event listeners for plus/minus buttons
+            plusBtn.addEventListener('click', () => {
+                let quantity = parseInt(quantityInput.value);
+                quantityInput.value = quantity + 1;
+                updateValues();
+            });
+
+            minusBtn.addEventListener('click', () => {
+                let quantity = parseInt(quantityInput.value);
+                if (quantity > 1) {
+                    quantityInput.value = quantity - 1;
+                    updateValues();
+                }
+            });
+
+            // Event listener for input and select changes
+            quantityInput.addEventListener('change', updateValues);
+            unitSelect.addEventListener('change', updateValues);
+        });
+    </script>     
+<footer class="py-5 mt-auto bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
+                    <h5 class="m-0 text-white">FitMatch</h5>
+                </div>
+                <p class="small text-white">
+                    ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
+                    <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
+                    <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">About This Project</h5>
+                <p class="small text-white mb-0">
+                    โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4 border-light">
+        <div class="text-center small" style="color: #A9B1B7;">
+    &copy; 2025 FitMatch. All Rights Reserved.
+</div>
+    </div>
+</footer>
+     </body>
+</html>

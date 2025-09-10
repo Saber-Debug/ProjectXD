@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 FINGERS Crispy Chicken | เมนูอาหาร</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleindex.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding-top: 5rem;
+            padding-bottom: 2rem;
+        }
+
+        .page-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .food-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .food-item {
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .food-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .food-item h5 {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .food-item p.subtitle {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-container img {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-stylish">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/Screenshot_2025-08-20_184240-removebg-preview.png" alt="Fitspiration Logo" class="logo me-2">
+                    <span class="brand-text">FitMatch</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Food.html">อาหาร</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Calories-dialy.html">คำนวณแคลอรี่ต่อวัน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Program.html">โปรแกรมการออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Routine.html">ท่าออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/4fingers-logo.png" alt="4 FINGERS Logo">
+        </div>
+        <h1 class="page-header">4 FINGERS Crispy Chicken</h1>
+        <div class="row mb-4 align-items-center">
+            <div class="col-6">
+                <p class="mb-0" id="itemCount">จำนวน 16 รายการ</p>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" placeholder="ค้นหาใน 4 FINGERS Crispy Chicken">
+                    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="foodList">
+            <div class="col food-item-wrapper" data-search-terms="กุ้งชุบแป้งทอด battered shrimp">
+                <a href="battered-shrimp-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/59cc7d5bb67af79e3f838ad6db37d0f9.jpeg" alt="กุ้งชุบแป้งทอด">
+                        <h5>กุ้งชุบแป้งทอด</h5>
+                        <p class="subtitle">Battered Shrimp</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="ข้าวญี่ปุ่นซีฟู้ด seafood rice box">
+                <a href="seafood-rice-box-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/4f88ab5ef5c83f1e8e9b00782a2550cf.jpeg" alt="ข้าวญี่ปุ่นซีฟู้ด">
+                        <h5>ข้าวญี่ปุ่นซีฟู้ด</h5>
+                        <p class="subtitle">Seafood Rice Box</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="ข้าวญี่ปุ่นเต้าหู้ทอด tofu rice box">
+                <a href="tofu-rice-box-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/ea6ebd182f15cf23c9f63ea1b54f73b8.jpeg" alt="ข้าวญี่ปุ่นเต้าหู้ทอด">
+                        <h5>ข้าวญี่ปุ่นเต้าหู้ทอด</h5>
+                        <p class="subtitle">Tofu Rice Box</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ข้าวญี่ปุ่นน่องไก่ทอด chicken 4 pcs">
+                <a href="chicken-rice-box-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/f16a6768cb652fe39762abfebbce4cbb.jpeg" alt="ข้าวญี่ปุ่นน่องไก่ทอด">
+                        <h5>ข้าวญี่ปุ่นน่องไก่ทอด</h5>
+                        <p class="subtitle">Chicken (4 pcs)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ข้าวญี่ปุ่นปีกไก่ทอด chicken rice box">
+                <a href="chicken-wings-rice-box-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/63b8f5da8f5564ef51c72e3e8f631953.jpeg" alt="ข้าวญี่ปุ่นปีกไก่ทอด">
+                        <h5>ข้าวญี่ปุ่นปีกไก่ทอด</h5>
+                        <p class="subtitle">Chicken Rice Box</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="ชิ้กเก้นช้อป ไก่ไม่มีกระดูก chicken chop">
+                <a href="chicken-chop-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2xdEzcSwyQzY28FKvzxx5_O-TEaUqnUbLIg&s" alt="ชิ้กเก้นช้อป">
+                        <h5>ชิ้กเก้นช้อป(ไก่ไม่มีกระดูก)</h5>
+                        <p class="subtitle">Chicken Chop</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="น่องไก่ทอด drumsticks">
+                <a href="drumsticks-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/4e823500762c71be26abda3d6282c5fb.jpeg" alt="น่องไก่ทอด">
+                        <h5>น่องไก่ทอด</h5>
+                        <p class="subtitle">Drumsticks</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="เบอร์เกอร์ไก่ทอด bff burger 4fingers">
+                <a href="burger-4fingers-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/400d7825bb134bd824a3ab28821de896.jpeg" alt="เบอร์เกอร์ไก่ทอด">
+                        <h5>เบอร์เกอร์ไก่ทอด</h5>
+                        <p class="subtitle">B.F.F (Burger 4Fingers)</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="ปลาหมึกชุบแป้งทอด calarmi">
+                <a href="calamari-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/34add167cf17f0bd3afc0a4388e6f951.jpeg" alt="ปลาหมึกชุบแป้งทอด">
+                        <h5>ปลาหมึกชุบแป้งทอด</h5>
+                        <p class="subtitle">Calarmi</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="ปีกไก่ทอด wingettes & drumettes">
+                <a href="wingettes-drumettes-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/b0fe814df23c540f19c6cef9ace7eb28.jpeg" alt="ปีกไก่ทอด">
+                        <h5>ปีกไก่ทอด</h5>
+                        <p class="subtitle">Wingettes & Drumettes</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="เฟรนซ์ฟรายส์ รสกิมจิ kimchi fires">
+                <a href="kimchi-fries-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/4c65d3ee6bb85dfcc60a2da3d70e5341.jpeg" alt="เฟรนซ์ฟรายส์ รสกิมจิ">
+                        <h5>เฟรนซ์ฟรายส์ รสกิมจิ</h5>
+                        <p class="subtitle">Kimchi Fires</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="เฟรนซ์ฟรายส์ รสสาหร่าย seaweed fries">
+                <a href="seaweed-fries-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/0b231ab2f49140b37ebcbcf46ad46f4e.jpeg" alt="เฟรนซ์ฟรายส์ รสสาหร่าย">
+                        <h5>เฟรนซ์ฟรายส์ รสสาหร่าย</h5>
+                        <p class="subtitle">Seaweed Fries</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="สลัดไก่ทอด chicken katsu salad">
+                <a href="chicken-katsu-salad-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/69d68de478619657f98c07b2c878c4a4.jpeg" alt="สลัดไก่ทอด">
+                        <h5>สลัดไก่ทอด</h5>
+                        <p class="subtitle">Chicken Katsu Salad</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="สลัดซีฟู้ด seafood salad">
+                <a href="seafood-salad-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/f7634b68b44bbd8548fd47d63bbc2467.jpeg" alt="สลัดซีฟู้ด">
+                        <h5>สลัดซีฟู้ด</h5>
+                        <p class="subtitle">Seafood Salad</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="สลัดเต้าหู้ทอด tofu salad">
+                <a href="tofu-salad-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/2b4af4b9e0ea548a7a5438974ee47833.jpeg" alt="สลัดเต้าหู้ทอด">
+                        <h5>สลัดเต้าหู้ทอด</h5>
+                        <p class="subtitle">Tofu Salad</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="หมึกและกุ้งชุบแป้งทอด calamari and shrimp">
+                <a href="calamari-shrimp-detail.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/a95da7c2fd90b60f41821428d89dbcf4.jpeg" alt="หมึกและกุ้งชุบแป้งทอด">
+                        <h5>หมึกและกุ้งชุบแป้งทอด</h5>
+                        <p class="subtitle">Calamari and Shrimp</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const foodItems = document.querySelectorAll('.food-item-wrapper');
+        const itemCount = document.getElementById('itemCount');
+        const totalItems = foodItems.length;
+
+        // อัปเดตจำนวนรายการทั้งหมดเมื่อโหลดหน้าครั้งแรก
+        itemCount.textContent = `จำนวน ${totalItems} รายการ`;
+
+        searchInput.addEventListener('keyup', function(event) {
+            const query = event.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            foodItems.forEach(item => {
+                const searchTerms = item.getAttribute('data-search-terms').toLowerCase();
+                
+                if (searchTerms.includes(query)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // อัปเดตจำนวนรายการที่แสดงผล
+            itemCount.textContent = `จำนวน ${visibleCount} รายการ`;
+        });
+    });
+    </script>
+<footer class="py-5 mt-auto bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
+                    <h5 class="m-0 text-white">FitMatch</h5>
+                </div>
+                <p class="small text-white">
+                    ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
+                    <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
+                    <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">About This Project</h5>
+                <p class="small text-white mb-0">
+                    โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4 border-light">
+        <div class="text-center small" style="color: #A9B1B7;">
+    &copy; 2025 FitMatch. All Rights Reserved.
+</div>
+    </div>
+</footer>
+</body>
+</html>

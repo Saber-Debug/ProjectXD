@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ท่าออกกำลังกาย</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styleindex.css">
+    
+    <style>
+        /* Navbar และ Style */
+        .custom-navbar-stylish {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .brand-text {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .logo {
+            height: 40px;
+        }
+
+        /* Card Section Styles */
+        .exercise-section .card {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        .exercise-section .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Workout Card-specific styles */
+        .workout-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .workout-card .card-img-top {
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
+        }
+        .workout-card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+        .workout-info {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        
+        /* Style for the link inside the card */
+        .card-link-wrapper .stretched-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .card-link-wrapper .stretched-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Burn Fat Section styles */
+        .burn-fat-card {
+            position: relative;
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .burn-fat-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+        .burn-fat-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        }
+        .burn-fat-card .card-text {
+            font-size: 0.9em;
+            margin-bottom: 0;
+        }
+        .info-bar {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-bar svg {
+            color: #ffffff;
+            width: 16px;
+            height: 16px;
+        }
+        .info-bar span {
+            font-size: 0.8em;
+        }
+        .info-bar .badge {
+            font-weight: normal;
+        }
+
+        /* New Exercise Detail Styles */
+        .exercise-detail .row {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .exercise-detail .row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .exercise-detail h4 {
+            font-weight: bold;
+        }
+        .exercise-detail p {
+            margin-bottom: 0.5rem;
+        }
+        .muscle-diagram {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+        .rating-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .rating-bar .progress {
+            height: 100%;
+            background-color: red;
+        }
+        .social-share a {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-stylish">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/Screenshot_2025-08-20_184240-removebg-preview.png" alt="Fitspiration Logo" class="logo me-2">
+                    <span class="brand-text">FitMatch</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Food.html">อาหาร</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Calories-dialy.html">คำนวณแคลอรี่ต่อวัน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Program.html">โปรแกรมการออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Routine.html">ท่าออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<main class="py-5 mt-5">
+    <div class="container">
+        <h2 class="mb-4">ท่าออกกำลังกาย</h2>
+        <div class="exercise-detail">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/wrWKVbniCxM?si=0UbxGnAO9jUm6YY_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4>Reverse Lunge to Chop</h4>
+                    </div>
+                    <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                    <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">ดัมเบล</span></p>
+                    <div class="d-flex justify-content-between mb-2">
+                        <p class="text-muted">กล้ามเนื้อ</p>
+                        <p>ก้น, ต้นขา, ท้อง, หน้าอก, หลังแขน, หัวไหล่, ไหล่ข้าง</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/XUODfU0rvJM?si=ntUnn4LR6T7NrKzC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4>Single Leg Knee Drive</h4>
+                    </div>
+                    <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                    <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                    <div class="d-flex justify-content-between mb-2">
+                        <p class="text-muted">กล้ามเนื้อ</p>
+                        <p>ก้น, ต้นขา, ท้อง</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%; background-color: orange;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/BR_CJuDGiYM?si=gyOJdp-_x1o1JXvi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Explosive In and Out Push Up</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ท้อง, หน้าแขน, หน้าอก, หลังแขน, หัวไหล่</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress bg-danger" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/bWLwmAddRvc?si=_tZ24pXToJLPixZD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Close to Wide Grip Push Up</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ท้อง, หน้าแขน, หน้าอก, หลังแขน, หัวไหล่</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/ui0h8tr4QHg?si=bJUSaHeGrrVCuxYN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Dumbbell Single Leg Biceps Curl</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">ดัมเบล</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ก้น, ต้นขา, หน้าแขน, หัวไหล่</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress bg-danger" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/Ss8MIq9MW9k?si=wxHN6aGdpQa89R2t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Elbow Side Plank Rotation</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ก้น, ท้อง, ไหล่ข้าง</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/j55Mv2x4AYs?si=nbc87uc2YEJl3t3G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Dumbbell Standing W-Raise</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">ดัมเบล</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">หลัง, หัวไหล่</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/-vYWhZf3YOc?si=59ywrRMRCmMHmm4r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Glute Extension</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength, Bodyweight</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ก้น, หลัง</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/wrWKVbniCxM?si=CnMMVtuRIE-GBUge" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Reverse Lunge to Chop</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">ดัมเบล</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ก้น, ต้นขา, หน้าแขน, หัวไหล่</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress bg-danger" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/XUODfU0rvJM?si=6QN9EPf_zawrdXJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Single Leg Knee Drive</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">ก้น, ท้อง, ไหล่ข้าง</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/BR_CJuDGiYM?si=vXjR1fUjqsRl_UDz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Explosive In and Out Push Up</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength Loading</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">ดัมเบล</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">หลังแขน, หน้าอก, หัวไหล่</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/bWLwmAddRvc?si=8zFCs1-UtCIqBbSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h4>Close to Wide Grip Push Up</h4>
+                            <p class="text-muted small mb-0">ประเภท: <span class="fw-bold">Strength, Bodyweight</span></p>
+                            <p class="text-muted small mb-0">อุปกรณ์ที่ใช้: <span class="fw-bold">Bodyweight</span></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <p class="text-muted mb-0">กล้ามเนื้อ</p>
+                        <p class="text-end">หลังแขน, อก</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="text-muted mb-0">ระดับ</p>
+                        <div class="rating-bar flex-grow-1 ms-3">
+                            <div class="progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="py-5 mt-auto bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
+                    <h5 class="m-0 text-white">FitMatch</h5>
+                </div>
+                <p class="small text-white">
+                    ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
+                    <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
+                    <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">About This Project</h5>
+                <p class="small text-white mb-0">
+                    โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4 border-light">
+        <div class="text-center small" style="color: #A9B1B7;">
+    &copy; 2025 FitMatch. All Rights Reserved.
+</div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitMatch | ค้นหาอาหาร</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /*
+         * =======================
+         * Page-specific CSS for Food.html
+         * =======================
+         */
+
+        .food-header {
+            background-image: url('https://wallpapers.com/images/hd/food-4k-m37wpodzrcbv5gvw.jpg'); /* แก้ไขตรงนี้ */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .food-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .food-header-content {
+            z-index: 1;
+        }
+
+        .food-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .food-header p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .search-form-container {
+            margin-top: 2rem;
+        }
+
+        .search-form-container .form-control,
+        .search-form-container .btn {
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .search-form-container .btn {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--background-dark);
+        }
+
+        .search-form-container .btn:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--background-dark);
+        }
+
+        .food-section-title {
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+        
+        /* New Styles for Restaurant Section */
+        .restaurant-section {
+            background-color: #fff; /* White background as shown in the image */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .restaurant-section-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .restaurant-section-header h2 {
+            font-weight: 700;
+            color: var(--dark-color); /* Use a dark color for text on white background */
+            margin-bottom: 0;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .restaurant-section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .restaurant-section-header a {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .restaurant-logo-card {
+            border: none;
+            background: none;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .restaurant-logo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .restaurant-logo-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* The rest of your existing CSS... */
+        .card-link:hover .food-card {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .food-card-img {
+            height: 250px;
+            object-fit: contain;
+            filter: brightness(85%);
+        }
+
+        .food-card-body {
+            padding: 1.5rem;
+        }
+
+        .food-card-title {
+            color: var(--text-white); /* สีขาวสำหรับหัวข้อหลัก */
+        }
+
+        .food-card-subtitle {
+            color: var(--text-light); /* สีเทาอ่อนสำหรับหัวข้อรอง */
+        }
+
+        .food-card-info {
+            color: var(--primary-color); /* ใช้สีหลัก (Cyan) เพื่อเน้นข้อมูลแคลอรี่ */
+        }
+        
+        /* Added for search highlight */
+        .highlight {
+            border: 3px solid #00FFFF; /* สีเดียวกับ primary color */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-stylish">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/Screenshot_2025-08-20_184240-removebg-preview.png" alt="Fitspiration Logo" class="logo me-2">
+                    <span class="brand-text">FitMatch</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Food.html">อาหาร</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Calories-dialy.html">คำนวณแคลอรี่ต่อวัน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Program.html">โปรแกรมการออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Routine.html">ท่าออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="food-header d-flex flex-column justify-content-center align-items-center text-center">
+            <div class="food-header-content container">
+                <h1>ค้นหาอาหาร</h1>
+                <p>แหล่งข้อมูลโภชนาการที่ผ่านการตรวจสอบแล้ว</p>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-6">
+                        <form id="search-form" class="d-flex search-form-container">
+                            <input id="search-input" class="form-control me-2" type="search" placeholder="พิมพ์ชื่ออาหาร" aria-label="Search" name="query">
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                        <div id="search-message" class="alert alert-warning mt-3 d-none" role="alert">
+                            ไม่พบอาหารที่คุณค้นหา
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="food-section-title">อาหารยอดฮิต</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="food-list">
+                <div class="col" id="เบียร์สิงห์">
+                    <a href="bearsingha.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Singha_Beer.jpg/250px-Singha_Beer.jpg" class="card-img-top food-card-img" alt="เบียร์สิงห์">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">เบียร์สิงห์</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Singha Beer</h6>
+                                <p class="food-card-info">229 Calories</p>
+                                <p class="food-card-info">1 ขวด 620mL</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col" id="ขนมปังโฮลวีท">
+                    <a href="wholewheat.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/36/88/8850123110436/8850123110436_1-20221115142506-.jpg" class="card-img-top food-card-img" alt="ฟาร์มเฮ้าส์ ขนมปังโฮลวีท">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">ฟาร์มเฮ้าส์ ขนมปังโฮลวีท</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Farmhouse Whole Wheat Bread</h6>
+                                <p class="food-card-info">130 Calories</p>
+                                <p class="food-card-info">1 x 2 แผ่น 50กรัม</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col" id="ขนมปังแซนด์วิช">
+                    <a href="Farmhouse.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://gourmetmarketthailand.com/_next/image?url=https%3A%2F%2Fmedia-stark.gourmetmarketthailand.com%2Fproducts%2Fcover%2F8850123110108-1.webp&w=1200&q=75" class="card-img-top food-card-img" alt="ฟาร์มเฮ้าส์ ขนมปังแซนด์วิช">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">ฟาร์มเฮ้าส์ ขนมปัง</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Farmhouse Sandwich Bread</h6>
+                                <p class="food-card-info">130 Calories</p>
+                                <p class="food-card-info">1 x 2 แผ่น 48กรัม</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col" id="ไส้กรอกรมควัน">
+                    <a href="CP-sausage-detail.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://fit-d.com/uploads/food/962f8a7736fff81a0a879e15ec73e6ea.png" class="card-img-top food-card-img" alt="ฮอทดอกรมควัน">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">ซีพี ไส้กรอกรมควัน</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Smoked Sausage</h6>
+                                <p class="food-card-info">350 Calories</p>
+                                <p class="food-card-info">1 แพ็ค 120กรัม</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col" id="ข้าวอบไก่ย่าง">
+                    <a href="rice-with-chicken-detail.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://img.wongnai.com/p/400x0/2020/08/04/7fccf80b93b44de5a5a9e4469239278d.jpg" class="card-img-top food-card-img" alt="ฮอทดอกรมควัน">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">ข้าวอบไก่ย่าง</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Rice with Chicken Grill</h6>
+                                <p class="food-card-info">397 Calories</p>
+                                <p class="food-card-info">1 x จาน</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col" id="ปีกไก่บอนชอน">
+                    <a href="Bonchon-wings-detail.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://fit-d.com/image_webp/f?src=./uploads/food/74955be489e056c174c23bc7d31c16dc.png" class="card-img-top food-card-img" alt="ฮอทดอกรมควัน">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">ปีกไก่บอนชอน</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Bonchon Wings</h6>
+                                <p class="food-card-info">850 Calories</p>
+                                <p class="food-card-info">1 x set 10ชิ้น</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col" id="ทาโกะยากิ">
+                    <a href="takoyaki-detail.html" class="card-link">
+                        <div class="card food-card">
+                            <img src="https://inwfile.com/s-cs/3m7v07.jpg" class="card-img-top food-card-img" alt="ฮอทดอกรมควัน">
+                            <div class="card-body food-card-body">
+                                <h5 class="card-title food-card-title">ทาโกะยากิ</h5>
+                                <h6 class="card-subtitle mb-2 food-card-subtitle">Takoyaki</h6>
+                                <p class="food-card-info">342 Calories</p>
+                                <p class="food-card-info">1 x จาน 6ชิ้น</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurant-section">
+    <div class="container">
+        <div class="restaurant-section-header position-relative mb-4">
+            <h2 class="mx-auto">ร้านอาหาร</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="4fingers-menu.html" class="text-decoration-none">
+                    <div class="restaurant-logo-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/4fingers-logo.png" alt="4Fingers" class="img-fluid">
+                        <p class="mt-2 text-dark">4 FINGERS Crisp</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="7eleven-menu.html" class="text-decoration-none">
+                    <div class="restaurant-logo-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/7-eleven_logo.svg/2110px-7-eleven_logo.svg.png" alt="7-eleven" class="img-fluid">
+                        <p class="mt-2 text-dark">7-eleven</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // ป้องกันการโหลดหน้าใหม่เมื่อกด submit
+
+        const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+        const foodItems = document.querySelectorAll('#food-list .col');
+        const searchMessage = document.getElementById('search-message');
+        
+        // ลบ highlight ที่มีอยู่ก่อนหน้า
+        document.querySelectorAll('.highlight').forEach(el => {
+            el.classList.remove('highlight');
+        });
+
+        if (searchQuery) {
+            let found = false;
+            let firstMatchElement = null;
+
+            // วนลูปเพื่อหาการ์ดที่ตรงกับคำค้นหา
+            for (let i = 0; i < foodItems.length; i++) {
+                const card = foodItems[i];
+                const foodTitle = card.querySelector('.food-card-title').textContent.trim().toLowerCase();
+                const foodSubtitle = card.querySelector('.food-card-subtitle').textContent.trim().toLowerCase();
+
+                if (foodTitle.includes(searchQuery) || foodSubtitle.includes(searchQuery)) {
+                    if (!firstMatchElement) {
+                        firstMatchElement = card.querySelector('.food-card');
+                    }
+                    found = true;
+                    card.style.display = 'block'; // ให้แน่ใจว่าการ์ดที่เจอแสดงผลอยู่
+                } else {
+                    card.style.display = 'block'; // ให้การ์ดที่ไม่ตรงยังคงแสดงผลอยู่
+                }
+            }
+
+            if (found) {
+                // ถ้าเจอ ให้ไฮไลต์การ์ดแรกที่พบและเลื่อนหน้าจอไปที่นั่น
+                firstMatchElement.classList.add('highlight');
+                firstMatchElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                searchMessage.classList.add('d-none'); // ซ่อนข้อความแจ้งเตือน
+            } else {
+                // ถ้าไม่เจอ ให้แสดงข้อความแจ้งเตือน
+                searchMessage.textContent = 'ไม่พบอาหารที่คุณค้นหา';
+                searchMessage.classList.remove('d-none');
+            }
+        } else {
+            // ถ้าช่องค้นหาว่าง ให้แสดงข้อความแจ้งเตือนและลบไฮไลต์
+            searchMessage.textContent = 'กรุณาพิมพ์ชื่ออาหารที่ต้องการค้นหา';
+            searchMessage.classList.remove('d-none');
+        }
+    });
+</script>
+<footer class="py-5 mt-auto bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
+                    <h5 class="m-0 text-white">FitMatch</h5>
+                </div>
+                <p class="small text-white">
+                    ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
+                    <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
+                    <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">About This Project</h5>
+                <p class="small text-white mb-0">
+                    โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4 border-light">
+        <div class="text-center small" style="color: #A9B1B7;">
+    &copy; 2025 FitMatch. All Rights Reserved.
+</div>
+    </div>
+</footer>
+</body>
+</html>

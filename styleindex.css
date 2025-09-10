@@ -1,0 +1,477 @@
+/*
+ * =======================
+ * Global & Utility Styles
+ * =======================
+ */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --red-primary: #e30022;
+    --red-secondary: #ff6e8a;
+    --light-gray: #f1f1f1;
+    --text-color-dark: #343a40;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 70px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/*
+ * =======================
+ * Stylish Navbar
+ * =======================
+ */
+.custom-navbar-stylish {
+    background-color: #ffffff !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar-stylish .navbar-brand .logo {
+    height: 55px;
+    width: auto;
+    transition: height 0.3s ease-in-out;
+}
+
+.custom-navbar-stylish .navbar-brand .brand-text {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.custom-navbar-stylish .nav-link {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    transition: color 0.2s ease-in-out;
+}
+
+.custom-navbar-stylish .nav-link:hover,
+.custom-navbar-stylish .nav-link.active {
+    color: var(--primary-color);
+}
+
+/*
+ * =======================
+ * Carousel Styles
+ * =======================
+ */
+.carousel-img {
+    object-fit: cover;
+    height: 800px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    bottom: 15%;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-caption h5 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon::after {
+    content: '<';
+    font-size: 1.5rem;
+    line-height: 45px;
+    color: #ffffff;
+}
+
+.carousel-control-next-icon::after {
+    content: '>';
+    font-size: 1.5rem;
+    line-height: 45px;
+    color: #ffffff;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/*
+ * =======================
+ * Main Content Styles
+ * =======================
+ */
+h2 {
+    font-weight: 700;
+    color: var(--text-color-dark);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Sidebar styles */
+.col-lg-3 .form-control {
+    border-radius: 50px;
+}
+
+.col-lg-3 .btn {
+    border-radius: 50px;
+}
+
+.social-share-buttons .btn {
+    background-color: var(--light-gray);
+    color: #444;
+    border: none;
+    border-radius: 5px;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-share-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/*
+ * =======================
+ * Exercise Card Section
+ * =======================
+ */
+
+.exercise-card {
+    background-color: var(--dark-color) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--dark-color);
+}
+
+.exercise-card .card-title {
+    color: #ffffff;
+}
+
+.exercise-card .card-text {
+    color: #ffffff;
+}
+
+.exercise-card .btn-secondary {
+    background-color: #495057;
+    border-color: #495057;
+    color: #ffffff;
+}
+
+.exercise-card .btn-secondary:hover {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.card-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.exercise-info {
+    flex: 1;
+}
+
+.muscle-diagram {
+    flex-shrink: 0;
+    width: 150px;
+    text-align: center;
+}
+
+.muscle-diagram img {
+    max-width: 100%;
+    height: auto;
+}
+
+.legend {
+    font-size: 11px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.legend-box-primary {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--red-primary);
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.legend-box-secondary {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--red-secondary);
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.progress-bar-container {
+    width: 100px;
+    height: 15px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #90EE90, #FFFF00, #FF6347);
+}
+
+.lightning-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/img/lightning-bolt-icon-vector-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/*
+ * =======================
+ * Footer Styles
+ * =======================
+ */
+
+.footer-stylish {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 6rem 0;
+}
+
+.footer-stylish .container {
+    max-width: 1200px;
+}
+
+.footer-stylish h5 {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-stylish h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.footer-stylish .list-unstyled a {
+    color: #999999;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-stylish .list-unstyled a:hover {
+    color: #ffffff;
+}
+
+.footer-stylish .btn-outline-light {
+    color: #e0e0e0;
+    border-color: #e0e0e0;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-stylish .btn-outline-light:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.footer-stylish hr {
+    border-top: 1px solid #333333;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-stylish .mb-0.text-white-50 {
+    color: #777777 !important;
+}
+
+/*
+ * =======================
+ * Page-specific CSS for Food.html
+ * =======================
+ */
+
+.food-card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--card-dark);
+    color: var(--text-light);
+    text-align: center;
+    position: relative;
+}
+
+/*
+ * =======================
+ * General Card Link Styles
+ * =======================
+ */
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+/*
+ * =======================
+ * Exercise Card Styles
+ * =======================
+ */
+
+.exercise-card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.exercise-card .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.exercise-card .exercise-info {
+    flex-grow: 1;
+}
+
+.exercise-card .muscle-diagram {
+    flex-shrink: 0;
+    width: 150px;
+}
+
+.difficulty-level .progress-bar-container {
+    background-color: #343a40;
+}
+
+.difficulty-level .progress-bar {
+    width: 66.67%; /* Example width, adjust as needed (Easy: 33%, Medium: 66%, Hard: 100%) */
+    background: linear-gradient(to right, #90EE90, #FFFF00, #FF6347);
+}
+
+.difficulty-level .lightning-icon {
+    right: calc(100% - 66.67% - 10px); /* Adjust position based on progress bar width */
+}
+
+/* Make sure the lightning icon image path is correct */
+.lightning-icon {
+    background-image: url('assets/img/lightning-bolt-icon-vector-removebg-preview.png');
+}
+

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Eleven Menu | เมนูอาหาร</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleindex.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding-top: 5rem;
+            padding-bottom: 2rem;
+        }
+
+        .page-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .food-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .food-item-wrapper {
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .food-item-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-item-wrapper img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .food-card-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .food-card-subtitle {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-container img {
+            height: 100px;
+        }
+        
+        /* สไตล์สำหรับไฮไลต์ */
+        .highlight {
+            box-shadow: 0 0 10px 3px rgba(255, 165, 0, 0.7); /* สีส้ม */
+            border: 2px solid orange;
+            transform: scale(1.05); /* ขยายเล็กน้อยเพื่อเน้น */
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-stylish">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/Screenshot_2025-08-20_184240-removebg-preview.png" alt="Fitspiration Logo" class="logo me-2">
+                    <span class="brand-text">FitMatch</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Food.html">อาหาร</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Calories-dialy.html">คำนวณแคลอรี่ต่อวัน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Program.html">โปรแกรมการออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Workout Routine.html">ท่าออกกำลังกาย</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/7-eleven_logo.svg/2110px-7-eleven_logo.svg.png" alt="7-Eleven Logo">
+        </div>
+        <h1 class="page-header">7-Eleven</h1>
+        <div class="row mb-4 align-items-center">
+            <div class="col-6">
+                <p class="mb-0" id="itemCount">จำนวน 41 รายการ</p>
+            </div>
+            <div class="col-6">
+                <form id="search-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="ค้นหาชื่ออาหาร, ขนม หรือเครื่องดื่ม">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div id="search-message" class="mt-2 text-danger fw-bold d-none"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="food-list">
+            <div class="col food-item-wrapper" data-search-terms="100 พลัส เครื่องดื่มกลิ่นเลมอน 100 Plus Lemon Flavored Drink เครื่องดื่ม">
+                <a href="100-plus-lemon.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/57/88/8851952141257/8851952141257_1-20240125110436-.jpg" alt="100 พลัส เครื่องดื่มกลิ่นเลมอน">
+                        <h5 class="food-card-title">100 พลัส เครื่องดื่มกลิ่นเลมอน</h5>
+                        <p class="subtitle food-card-subtitle">100 Plus Lemon Flavored Drink</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กระทิงแดง Red Bull เครื่องดื่ม">
+                <a href="red-bull.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/06/88/8850228000106/8850228000106_1-20250626111413-.jpg" alt="กระทิงแดง">
+                        <h5 class="food-card-title">กระทิงแดง</h5>
+                        <p class="subtitle food-card-subtitle">Red Bull</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กาแฟสกัดเย็นปรุงสำเร็จพร้อมดื่ม เนสกาแฟโคลด์บริว เพียวแบล็ค Nescafe Cold Brew Pure Black กาแฟ เครื่องดื่ม">
+                <a href="nescafe-cold-brew.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://www.tops.co.th/_next/image?url=https%3A%2F%2Fassets.tops.co.th%2Ffile-assets%2FTOPSPIM%2Fweb%2FImage%2F8850125%2FNESCAFE-NescafeColdBrewPureBlackCoffee220ml-8850125099906-1.jpg%3Fwidth%3D255&w=256&q=75" alt="กาแฟสกัดเย็นปรุงสำเร็จพร้อมดื่ม เนสกาแฟโคลด์บริว เพียวแบล็ค">
+                        <h5 class="food-card-title">กาแฟสกัดเย็นปรุงสำเร็จพร้อมดื่ม เนสกาแฟโคลด์บริว เพียวแบล็ค</h5>
+                        <p class="subtitle food-card-subtitle">Nescafe Cold Brew Pure Black</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ โคลลอนครีม Glico Collon Cream ขนม ของหวาน">
+                <a href="glico-collon-cream.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://glicothai.com/cdn/shop/products/CO16front-noframe_1_800x.png?v=1643866674" alt="กูลิโกะ โคลลอนครีม">
+                        <h5 class="food-card-title">กูลิโกะ โคลลอนครีม</h5>
+                        <p class="subtitle food-card-subtitle">Glico Collon Cream</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ โคลลอนช็อกโกแลต Glico Collon Chocolate ขนม ของหวาน">
+                <a href="glico-collon-chocolate.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/24/88/8851019030524/8851019030524_1-20240708161631-.jpg" alt="กูลิโกะ โคลลอนช็อกโกแลต">
+                        <h5 class="food-card-title">กูลิโกะ โคลลอนช็อกโกแลต</h5>
+                        <p class="subtitle food-card-subtitle">Glico Collon Chocolate</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ โคลลอนสตรอเบอร์รี่ Glico Collon Strawberry ขนม ของหวาน">
+                <a href="glico-collon-strawberry.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/48/88/8851019030548/thumbnail/8851019030548_1-20240708161549-.jpg" alt="กูลิโกะ โคลลอนสตรอเบอร์รี่">
+                        <h5 class="food-card-title">กูลิโกะ โคลลอนสตรอเบอร์รี่</h5>
+                        <p class="subtitle food-card-subtitle">Glico Collon Strawberry</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ทูโทน ขนมหวานรสนมและกลิ่นสตรอเบอร์รี่ Glico Two Tane Strawberry ขนม ของหวาน">
+                <a href="two-tane-strawberry.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/96/88/8851019020396/8851019020396-20240709103745-.jpg" alt="กูลิโกะ ทูโทน ขนมหวานรสนมและกลิ่นสตรอเบอร์รี่">
+                        <h5 class="food-card-title">กูลิโกะ ทูโทน ขนมหวานรสนมและกลิ่นสตรอเบอร์รี่</h5>
+                        <p class="subtitle food-card-subtitle">Glico Two Tane Strawberry</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ป๊อกกี้ ช็อกโกแลต อัลมอนด์ ครั้นช์ Glico Pocky Chocolate Almond Crush ขนม ของหวาน">
+                <a href="pocky-chocolate-almond-crush.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/48/49/4901005117648/4901005117648_1-20240801133132-.jpg" alt="กูลิโกะ ป๊อกกี้ ช็อกโกแลต อัลมอนด์ ครั้นช์">
+                        <h5 class="food-card-title">กูลิโกะ ป๊อกกี้ ช็อกโกแลต อัลมอนด์ ครั้นช์</h5>
+                        <p class="subtitle food-card-subtitle">Glico Pocky Chocolate Almond Crush</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ป๊อกกี้ รสคุกกี้และครีม Glico Pocky Cookies & Cream Taste ขนม ของหวาน">
+                <a href="pocky-cookies-and-cream.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/21/88/8851019010021/8851019010021_100.jpg" alt="กูลิโกะ ป๊อกกี้ รสคุกกี้และครีม">
+                        <h5 class="food-card-title">กูลิโกะ ป๊อกกี้ รสคุกกี้และครีม</h5>
+                        <p class="subtitle food-card-subtitle">Glico Pocky Cookies & Cream Taste</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ป๊อกกี้ รสชาเขียวมัทฉะ Glico Pocky Matcha Green Tea Flavour ขนม ของหวาน">
+                <a href="pocky-matcha-green-tea.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/38/88/8851019010038/8851019010038_100.jpg" alt="กูลิโกะ ป๊อกกี้ รสชาเขียวมัทฉะ">
+                        <h5 class="food-card-title">กูลิโกะ ป๊อกกี้ รสชาเขียวมัทฉะ</h5>
+                        <p class="subtitle food-card-subtitle">Glico Pocky Matcha Green Tea Flavour</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ป๊อกกี้ รสอัลมอนด์ Glico Pocky Almond Taste ขนม ของหวาน">
+                <a href="pocky-almond.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/45/88/8851019010045/8851019010045_100.jpg" alt="กูลิโกะ ป๊อกกี้ รสอัลมอนด์">
+                        <h5 class="food-card-title">กูลิโกะ ป๊อกกี้ รสอัลมอนด์</h5>
+                        <p class="subtitle food-card-subtitle">Glico Pocky Almond Taste</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ป๊อกกี้โฮลซัม ช็อกโกแลต อัลมอนด์ Glico Pocky Wholesome Chocolate Almond ขนม ของหวาน">
+                <a href="pocky-wholesome-chocolate-almond.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/76/88/8851019010076/8851019010076_2.jpg" alt="กูลิโกะ ป๊อกกี้โฮลซัม ช็อกโกแลต อัลมอนด์">
+                        <h5 class="food-card-title">กูลิโกะ ป๊อกกี้โฮลซัม ช็อกโกแลต อัลมอนด์</h5>
+                        <p class="subtitle food-card-subtitle">Glico Pocky Wholesome Chocolate Almond</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ ป๊อกกี้โฮลซัม โยเกิร์ต บลูเบอร์รี่ Glico Pocky Wholesome Blueberry Yoghurt ขนม ของหวาน">
+                <a href="pocky-wholesome-blueberry-yoghurt.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/83/88/8851019010083/8851019010083_1-20230717140113-.jpg" alt="กูลิโกะ ป๊อกกี้โฮลซัม โยเกิร์ต บลูเบอร์รี่">
+                        <h5 class="food-card-title">กูลิโกะ ป๊อกกี้โฮลซัม โยเกิร์ต บลูเบอร์รี่</h5>
+                        <p class="subtitle food-card-subtitle">Glico Pocky Wholesome Blueberry Yoghurt</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="กูลิโกะ อัลมอนด์ ฟรายด์ Glico Almond Whole Grain Pouch ขนม ของหวาน">
+                <a href="glico-almond-whole-grain.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://halal.co.th/storages/products/127785.jpg" alt="กูลิโกะ อัลมอนด์ ฟรายด์">
+                        <h5 class="food-card-title">กูลิโกะ อัลมอนด์ ฟรายด์</h5>
+                        <p class="subtitle food-card-subtitle">Glico Almond Whole Grain Pouch</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="เกเตอเรด เครื่องดื่มเกลือแร่ กลิ่นบลูบลาส Gatorade Blue Blast. เครื่องดื่ม">
+                <a href="gatorade-blueblast-lime.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/image_webp/f?src=./uploads/food/58f9add20efd37c13d4d9705d163c7a3.jpeg" alt="เกเตอเรด เครื่องดื่มเกลือแร่ กลิ่นมะนาว">
+                        <h5 class="food-card-title">เกเตอเรด เครื่องดื่มเกลือแร่ กลิ่นบลูบลาส</h5>
+                        <p class="subtitle food-card-subtitle">Gatorade Blue Blast</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="เกเตอเรด เครื่องดื่มเกลือแร่ กลิ่นมะนาว GATORADE Lemon Lime Flavored Drink เครื่องดื่ม">
+                <a href="gatorade-lemon-lime.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/25/88/8858998587025/8858998587025_1-20240819100947-.jpg" alt="เกเตอเรด เครื่องดื่มเกลือแร่ กลิ่นมะนาว">
+                        <h5 class="food-card-title">เกเตอเรด เครื่องดื่มเกลือแร่ กลิ่นมะนาว</h5>
+                        <p class="subtitle food-card-subtitle">GATORADE Lemon Lime Flavored Drink</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วเขียว รสวาซาบิ TACKAEW Peanuts Wasabi Flavor ขนม">
+                <a href="tackaew-wasabi.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://media-stark.gourmetmarketthailand.com/products/cover/8852023666211-1.webp" alt="โก๋แก่ ถั่วเขียว รสวาซาบิ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วเขียว รสวาซาบิ</h5>
+                        <p class="subtitle food-card-subtitle">TACKAEW Peanuts Wasabi Flavor</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วเขียว รสสาหร่าย TACKAEW Peanuts Seaweed Flavor ขนม">
+                <a href="tackaew-seaweed.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/image_webp/f?src=./uploads/food/5e1c377af1d07d9eb185bf4faa0bdbd3.jpeg" alt="โก๋แก่ ถั่วเขียว รสสาหร่าย">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วเขียว รสสาหร่าย</h5>
+                        <p class="subtitle food-card-subtitle">TACKAEW Peanuts Seaweed Flavor</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วเขียวโรยเกลือ TACKAEW Salted Peanuts ขนม">
+                <a href="tackaew-salted.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/d9269d13ab07d43589bb0280e6f1f13c.jpeg" alt="โก๋แก่ ถั่วเขียวโรยเกลือ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วเขียวโรยเกลือ</h5>
+                        <p class="subtitle food-card-subtitle">TACKAEW Salted Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงอบกรอบ รสซอสพริกศรีราชา TACKAEW Crispy Sriracha Flavored Peanuts ขนม">
+                <a href="tackaew-sriracha.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/13/88/8852023669113/8852023669113_6.jpg" alt="โก๋แก่ ถั่วลิสงอบกรอบ รสซอสพริกศรีราชา">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงอบกรอบ รสซอสพริกศรีราชา</h5>
+                        <p class="subtitle food-card-subtitle">TACKAEW Crispy Sriracha Flavored Peanuts</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงอบกรอบ รสปลาหมึก TACKAEW Crispy Squid Flavored Peanuts ขนม">
+                <a href="tackaew-squid.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://cdn.imweb.me/thumbnail/20240131/3f0dac3679a41.jpg" alt="โก๋แก่ ถั่วลิสงอบกรอบ รสปลาหมึก">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงอบกรอบ รสปลาหมึก</h5>
+                        <p class="subtitle food-card-subtitle">TACKAEW Crispy Squid Flavored Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงเยื่อแดง โรยเกลือ Koh-Kae Salted Red Skin Peanuts ขนม">
+                <a href="Tackaew-red-salt.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/23/88/8852023006123/8852023006123_1-20250623154637-.jpg" alt="โก๋แก่ ถั่วลิสงเยื่อแดง โรยเกลือ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงเยื่อแดง โรยเกลือ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Salted Red Skin Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงอบกรอบ รสกาแฟ Koh-Kae Coffee Flavoured Coated Peanuts ขนม">
+                <a href="Tackaew-coffee.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/14/88/8852023664514/8852023664514_1-20230411115308-.jpg" alt="โก๋แก่ ถั่วลิสงอบกรอบ รสกาแฟ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงอบกรอบ รสกาแฟ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Coffee Flavoured Coated Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ พลัส ถั่วอัลมอนด์อบเกลือ Koh-Kae Plus Salted Roasted Almonds ขนม">
+                <a href="Koh-Kae Plus Salted Roasted Almonds.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://gourmetmarketthailand.com/_next/image?url=https%3A%2F%2Fmedia-stark.gourmetmarketthailand.com%2Fproducts%2Fcover%2F8852023006628-1.webp&w=1200&q=75" alt="โก๋แก่ พลัส ถั่วอัลมอนด์อบเกลือ">
+                        <h5 class="food-card-title">โก๋แก่ พลัส ถั่วอัลมอนด์อบเกลือ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Plus Salted Roasted Almonds</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงอบกรอบ รสบาร์-บี-คิว Koh-Kae BBQ Flavoured Coated Peanuts ขนม">
+                <a href="Koh-Kae BBQ Flavoured Coated Peanuts.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/752a79eeea1dfa894ee106391579079b.jpeg" alt="โก๋แก่ ถั่วลิสงอบกรอบ รสบาร์-บี-คิว">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงอบกรอบ รสบาร์-บี-คิว</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae BBQ Flavoured Coated Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงอบกรอบ รสไก่ Koh-Kae Chicken Flavoured Coated Peanuts ขนม">
+                <a href="Koh-Kae Chicken Flavoured Coated Peanuts.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/073e07ab9371183a34fd4d47691ed56f.jpeg" alt="โก๋แก่ ถั่วลิสงอบกรอบ รสไก่">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงอบกรอบ รสไก่</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Chicken Flavoured Coated Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลิสงอบเกลือ Koh-Kae Salted Peanuts ขนม">
+                <a href="Koh-Kae Salted Peanuts.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/0e7ea95dfb2a3503534b47c744ae8587.jpeg" alt="โก๋แก่ ถั่วลิสงอบเกลือ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลิสงอบเกลือ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Salted Peanuts</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วลันเตาอบกรอบ รสวาซาบิ Koh-Kae Crispy Roasted Green Peas Wasabi ขนม">
+                <a href="Koh-Kae Crispy Roasted Green Peas Wasabi.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/9753fe7208f45f79f80c8d408190ae77.jpeg" alt="โก๋แก่ ถั่วลันเตาอบกรอบ รสวาซาบิ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วลันเตาอบกรอบ รสวาซาบิ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Crispy Roasted Green Peas Wasabi</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ ถั่วเขียว รสปูอัด วาซาบิ Koh-Kae Crab Stick Wasabi Flavoured Green Peas ขนม">
+                <a href="Koh-Kae Crab Stick Wasabi Flavoured Green Peas.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/bad8655de300b52d5042017b688db641.jpeg" alt="โก๋แก่ ถั่วเขียว รสปูอัด วาซาบิ">
+                        <h5 class="food-card-title">โก๋แก่ ถั่วเขียว รสปูอัด วาซาบิ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Crab Stick Wasabi Flavoured Green Peas</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ พลัส เม็ดมะม่วงหิมพานต์อบ Koh-Kae Plus & Roasted Cashew Nuts ขนม">
+                <a href="Koh-Kae Plus & Roasted Cashew Nuts.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/b41aa29b1d6e29df64553a40a1f311c7.jpeg" alt="โก๋แก่ พลัส เม็ดมะม่วงหิมพานต์">
+                        <h5 class="food-card-title">โก๋แก่ พลัส เม็ดมะม่วงหิมพานต์อบ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Plus Roasted Cashew Nuts</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="โก๋แก่ พลัส เมล็ดมะม่วงหิมพานต์อบเกลือ Koh-Kae Plus Salted & Roasted Cashew Nuts ขนม">
+                <a href="Koh-Kae Plus Salted & Roasted Cashew Nuts.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/a9187ceb59fb007ee384e70dca783a3b.jpeg" alt="โก๋แก่ พลัส เมล็ดมะม่วงหิมพานต์อบเกลือ">
+                        <h5 class="food-card-title">โก๋แก่ พลัส เมล็ดมะม่วงหิมพานต์อบเกลือ</h5>
+                        <p class="subtitle food-card-subtitle">Koh-Kae Plus Salted & Roasted Cashew Nuts</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="โกปิโก้ ลูกอมคาปูชิโน่ Kopiko Coffee Shot Cappuccino ขนม">
+                <a href="Kopiko Coffee Shot Cappuccino.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/36/89/8996001320136/8996001320136_1-20250623145456-.jpg" alt="โกปิโก้ ลูกอมคาปูชิโน่">
+                        <h5 class="food-card-title">โกปิโก้ ลูกอมคาปูชิโน่</h5>
+                        <p class="subtitle food-card-subtitle">Kopiko Coffee Shot Cappuccino</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ไก่แดดเดียวพร้อมข้าวเหนียว Dried Chicken with Sticky Rice อาหารจานหลัก">
+                <a href="Dried Chicken with Sticky Rice.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://storage.googleapis.com/cmpd-sit-bucket-app/images/cpbrandsite/olljciyvb8s6lexvia28mjuthr6fawvoi4xuoe9b.png" alt="ไก่แดดเดียวพร้อมข้าวเหนียว">
+                        <h5 class="food-card-title">ไก่แดดเดียวพร้อมข้าวเหนียว</h5>
+                        <p class="subtitle food-card-subtitle">Dried Chicken with Sticky Rice</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ข้าวกล้องหอมมะลิ Jasmine Brown Rice ข้าว">
+                <a href="Jasmine Brown Rice.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://images.openfoodfacts.org/images/products/885/135/138/1155/front_th.4.full.jpg" alt="ข้าวกล้องหอมมะลิ">
+                        <h5 class="food-card-title">ข้าวกล้องหอมมะลิ</h5>
+                        <p class="subtitle food-card-subtitle">Jasmine Brown Rice</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ข้าวไรซ์เบอร์รี่ผสมข้าวหอมมะลิ Riceberry Mixed Jasmine Rice ข้าว">
+                <a href="Riceberry Mixed Jasmine Rice.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/f3e5af436fd248211bb60986599fd271.jpg" alt="ข้าวไรซ์เบอร์รี่ผสมข้าวหอมมะลิ">
+                        <h5 class="food-card-title">ข้าวไรซ์เบอร์รี่ผสมข้าวหอมมะลิ</h5>
+                        <p class="subtitle food-card-subtitle">Riceberry Mixed Jasmine Rice</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col food-item-wrapper" data-search-terms="ข้าวไรซ์เบอรี่อกไก่ย่าง และกะหล่ำปลีผัดน้ำปลา Riceberry rice with grilled chicken breast and stir-fried cabbage with fish sauce อาหารจานหลัก อาหารคลีน">
+                <a href="Riceberry rice with grilled chicken breast and stir-fried cabbage with fish sauce.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/579c2630d3b6687ec42d3c3428fa81e6.jpg" alt="ข้าวไรซ์เบอร์รี่อกไก่ย่างและกุ้งผัดปลา">
+                        <h5 class="food-card-title">ข้าวไรซ์เบอรี่อกไก่ย่าง และกะหล่ำปลีผัดน้ำปลา</h5>
+                        <p class="subtitle food-card-subtitle">Riceberry rice with grilled chicken breast and stir-fried cabbage with fish sauce</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ข้าวสวยหอมมะลิ Steamed Jasmine Rice ข้าว">
+                <a href="Steamed Jasmine Rice.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/43df50b72eab8e86ef4f00c95cce1d0f.jpg" alt="ข้าวสวยหอมมะลิ">
+                        <h5 class="food-card-title">ข้าวสวยหอมมะลิ</h5>
+                        <p class="subtitle food-card-subtitle">Steamed Jasmine Rice</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ข้าวอกไก่ผัดขิง ตราซีพีดีไลท์ Chicken Ginger Stir-Fry Rice, CP Delight Brand อาหารจานหลัก อาหารคลีน">
+                <a href="Chicken Ginger Stir-Fry Rice, CP Delight Brand.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/a13851e00a5ab27bb7c844bdeff3c3f4.png" alt="ข้าวอกไก่ผัดขิง ตราซีพีดีไลท์">
+                        <h5 class="food-card-title">ข้าวอกไก่ผัดขิง ตราซีพีดีไลท์</h5>
+                        <p class="subtitle food-card-subtitle">Chicken Ginger Stir-Fry Rice, CP Delight Brand</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ไข่เค็ม สูตรเค็มน้อย Salted Egg, Low Salt Formula ไข่ อาหารคลีน">
+                <a href="Salted Egg, Low Salt Formula.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/a0e6fd6d6c8bab8812b47f55e286ad14.png" alt="ไข่เค็ม สูตรเค็มน้อย">
+                        <h5 class="food-card-title">ไข่เค็ม สูตรเค็มน้อย</h5>
+                        <p class="subtitle food-card-subtitle">Salted Egg, Low Salt Formula</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ครัวซองต์ครีมคัสตาร์ดไข่เค็ม Salted egg custard custard cream croissant ขนม">
+                <a href="Salted egg custard custard cream croissant.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/7d4d7d633b8cf1f70b4beee07fde5e0d.jpeg" alt="ครัวซองต์ครีมคัสตาร์ดไข่เค็ม">
+                        <h5 class="food-card-title">ครัวซองต์ครีมคัสตาร์ดไข่เค็ม</h5>
+                        <p class="subtitle food-card-subtitle">Salted egg custard custard cream croissant</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col food-item-wrapper" data-search-terms="ครีมเทียม Coffee Creamer เครื่องปรุง">
+                <a href="Coffee Creamer.html" class="food-link">
+                    <div class="food-item">
+                        <img src="https://fit-d.com/uploads/food/fa347e07e2ca60dcc4da43487afe0ae5.jpg" alt="ครีมเทียม">
+                        <h5 class="food-card-title">ครีมเทียม</h5>
+                        <p class="subtitle food-card-subtitle">Coffee Creamer</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+     
+             <div class="container">
+            <div class="row">
+            </div>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const foodList = document.getElementById("food-list");
+            const searchInput = document.getElementById("searchInput");
+            const searchForm = document.getElementById("search-form");
+            const itemCount = document.getElementById("itemCount");
+            const searchMessage = document.getElementById("search-message");
+
+            let allFoodItems = Array.from(document.querySelectorAll(".food-item-wrapper"));
+
+            function filterItems(query) {
+                const lowerCaseQuery = query.toLowerCase().trim();
+                let foundItems = 0;
+
+                allFoodItems.forEach(item => {
+                    const searchTerms = item.getAttribute("data-search-terms").toLowerCase();
+                    if (searchTerms.includes(lowerCaseQuery)) {
+                        item.style.display = "block";
+                        foundItems++;
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                itemCount.textContent = `จำนวน ${foundItems} รายการ`;
+
+                if (foundItems === 0 && lowerCaseQuery !== "") {
+                    searchMessage.textContent = "ไม่พบรายการที่ค้นหา";
+                    searchMessage.classList.remove("d-none");
+                } else {
+                    searchMessage.classList.add("d-none");
+                }
+            }
+
+            searchForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                filterItems(searchInput.value);
+            });
+
+            searchInput.addEventListener("input", function() {
+                filterItems(this.value);
+            });
+
+            // เพิ่ม event listener สำหรับไฮไลต์เมื่อคลิก
+            foodList.addEventListener("click", function(event) {
+    const clickedItem = event.target.closest(".food-item-wrapper");
+    if (clickedItem) {
+        allFoodItems.forEach(item => item.classList.remove("highlight"));
+        clickedItem.classList.add("highlight");
+    }
+});
+        });
+    </script>
+<footer class="py-5 mt-auto bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
+                    <h5 class="m-0 text-white">FitMatch</h5>
+                </div>
+                <p class="small text-white">
+                    ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
+                    <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
+                    <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">About This Project</h5>
+                <p class="small text-white mb-0">
+                    โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-4">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-4 border-light">
+        <div class="text-center small" style="color: #A9B1B7;">
+    &copy; 2025 FitMatch. All Rights Reserved.
+</div>
+    </div>
+</footer>
+</body>
+</html>
