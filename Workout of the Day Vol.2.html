@@ -563,44 +563,51 @@
         </section>
     </main>
 
-    <div class="modal fade modal-video" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark text-white">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="videoModalLabel">Video Title</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <div class="ratio ratio-16x9">
-                        <iframe id="youtube-iframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-dark border-0">
+                <h5 class="modal-title text-white" id="videoModalLabel">วิธีการออกกำลังกาย</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="ratio ratio-16x9">
+                    <iframe id="videoIframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoModal = document.getElementById('videoModal');
-            const youtubeIframe = document.getElementById('youtube-iframe');
-            const modalTitle = document.getElementById('videoModalLabel');
-
-            videoModal.addEventListener('show.bs.modal', function (event) {
-                const button = event.relatedTarget;
-                const videoUrl = button.getAttribute('data-video-url');
-                const exerciseTitle = button.querySelector('.exercise-title').textContent;
-                
-                if (youtubeIframe && videoUrl) {
-                    youtubeIframe.src = videoUrl;
-                    modalTitle.textContent = exerciseTitle;
-                }
-            });
-
-            videoModal.addEventListener('hide.bs.modal', function () {
-                youtubeIframe.src = '';
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoModal = document.getElementById('videoModal');
+        const videoIframe = document.getElementById('videoIframe');
+        
+        videoModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const videoUrl = button.getAttribute('data-video-url');
+            
+            // Assuming the videoUrl is a direct YouTube link
+            // For example: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            // We need to convert it to an embed URL
+            let embedUrl = videoUrl;
+            if (videoUrl.includes("youtube.com/watch")) {
+                const videoId = new URL(videoUrl).searchParams.get("v");
+                embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            } else if (videoUrl.includes("youtu.be/")) {
+                const videoId = videoUrl.split("youtu.be/")[1];
+                embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            }
+            
+            videoIframe.src = embedUrl;
         });
-    </script>
+
+        videoModal.addEventListener('hide.bs.modal', function (event) {
+            videoIframe.src = '';
+        });
+    });
+</script>
 <footer class="py-5 mt-auto bg-dark text-white">
     <div class="container">
         <div class="row">
