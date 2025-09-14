@@ -6,183 +6,12 @@
     <title>หน้าแรก - FitMatch.com</title>
     <link rel="stylesheet" href="assets/css/css/bootstrap.min.css">
     <link rel="stylesheet" href="styleindex.css">
-    <style>
-        /*
-         * =======================
-         * Page-specific CSS for Food.html
-         * =======================
-         */
-
-        .food-header {
-            background-image: url('https://wallpapers.com/images/hd/food-4k-m37wpodzrcbv5gvw.jpg'); /* แก้ไขตรงนี้ */
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
-
-        .food-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .food-header-content {
-            z-index: 1;
-        }
-
-        .food-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .food-header p {
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .search-form-container {
-            margin-top: 2rem;
-        }
-
-        .search-form-container .form-control,
-        .search-form-container .btn {
-            border-radius: 50px;
-            padding: 0.75rem 1.5rem;
-        }
-
-        .search-form-container .btn {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--background-dark);
-        }
-
-        .search-form-container .btn:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            color: var(--background-dark);
-        }
-
-        .food-section-title {
-            text-align: center;
-            margin-top: 4rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            color: var(--text-white);
-        }
-
-        /* New Styles for Restaurant Section */
-        .restaurant-section {
-            background-color: #fff; /* White background as shown in the image */
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .restaurant-section-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .restaurant-section-header h2 {
-            font-weight: 700;
-            color: var(--dark-color); /* Use a dark color for text on white background */
-            margin-bottom: 0;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .restaurant-section-header h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .restaurant-section-header a {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .restaurant-logo-card {
-            border: none;
-            background: none;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .restaurant-logo-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .restaurant-logo-card img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            margin-bottom: 0.5rem;
-        }
-
-        /* The rest of your existing CSS... */
-        .card-link:hover .food-card {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .food-card-img {
-            height: 250px;
-            object-fit: contain;
-            filter: brightness(85%);
-        }
-
-        .food-card-body {
-            padding: 1.5rem;
-        }
-
-        .food-card-title {
-            color: var(--text-white); /* สีขาวสำหรับหัวข้อหลัก */
-        }
-
-        .food-card-subtitle {
-            color: var(--text-light); /* สีเทาอ่อนสำหรับหัวข้อรอง */
-        }
-
-        .food-card-info {
-            color: var(--primary-color); /* ใช้สีหลัก (Cyan) เพื่อเน้นข้อมูลแคลอรี่ */
-        }
-
-        /* Added for search highlight */
-        .highlight {
-            border: 3px solid #00FFFF; /* สีเดียวกับ primary color */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-            transition: all 0.5s ease;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="page-transition">
+    <img src="assets/img/Screenshot_2025-08-20_184240-removebg-preview.png" alt="FitMatch Logo" class="transition-logo">
+  </div>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-stylish">
             <div class="container-fluid px-5">
@@ -511,5 +340,6 @@
     </div>
 </footer>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="java.js"></script>
 </body>
 </html>
