@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>กูลิโกะ ป๊อกกี้โฮลซัม โยเกิร์ต บลูเบอร์รี่ | FitMatch</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <style>
+        /* ====================
+        General & Typography
+        ==================== */
         :root {
-            --primary-color: #3399FF; /* สี Cyan */
+            --primary-color: #3399FF; /* สีฟ้า */
             --dark-color: #343a40; /* สีเทาเข้ม */
         }
         
@@ -17,10 +25,16 @@
             background-color: #f8f9fa;
         }
 
+        /* ====================
+        Main Content Layout
+        ==================== */
         .food-detail-container {
             padding-top: 5rem;
         }
 
+        /* ====================
+        Image Section
+        ==================== */
         .food-image-section {
             display: flex;
             align-items: center;
@@ -37,6 +51,9 @@
             object-fit: contain;
         }
 
+        /* ====================
+        Food Info Section
+        ==================== */
         .food-info-section h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -70,37 +87,19 @@
             border-color: #2a7acc;
         }
 
-        .social-share a {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-            color: #fff;
-            background-color: #6c757d;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-share .btn-facebook { background-color: #3b5998; }
-        .social-share .btn-twitter { background-color: #00acee; }
-        .social-share .btn-green { background-color: #25D366; } /* WhatsApp */
-
+        /* ====================
+        Activity Section
+        ==================== */
         .activity-section {
             background-color: #fff;
             border-radius: 10px;
             padding: 2rem;
         }
 
-        .activity-card {
-            text-align: center;
-        }
-
         .activity-card .icon {
             font-size: 3rem;
             color: var(--primary-color);
-            background-color: var(--dark-color);
+            background-color: #e9ecef; /* Changed from dark to a lighter shade for contrast */
             border-radius: 50%;
             width: 80px;
             height: 80px;
@@ -114,7 +113,10 @@
             margin-bottom: 0;
             font-weight: 500;
         }
-        
+
+        /* ====================
+        Nutrition Section
+        ==================== */
         .nutrition-section {
             background-color: #fff;
             border-radius: 10px;
@@ -183,7 +185,7 @@
         <div class="row g-4">
             <div class="col-md-5">
                 <div class="food-image-section">
-                    <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/83/88/8851019010083/8851019010083_1-20230717140113-.jpg" alt="กูลิโกะ ป๊อกกี้ ช็อกโกแลต อัลมอนด์ ครัช" class="img-fluid">
+                    <img src="https://st.bigc-cs.com/cdn-cgi/image/format=webp,quality=90/public/media/catalog/product/83/88/8851019010083/8851019010083_1-20230717140113-.jpg" alt="กูลิโกะ ป๊อกกี้โฮลซัม โยเกิร์ต บลูเบอร์รี่" class="img-fluid">
                 </div>
             </div>
             <div class="col-md-7">
@@ -270,11 +272,10 @@
             </div>
         </div>
     </main>
-     
-        
-     
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Base values for Glico Pocky Wholesome Blueberry Yoghurt
@@ -282,7 +283,7 @@
             const baseFat = 7;
             const baseCarbs = 25;
             const baseProtein = 3;
-            const baseServing = "1 x กล่อง (36 กรัม)";
+            
             const baseActivityTime = {
                 'เดิน': 64,
                 'ปั่นจักรยาน': 38,
@@ -290,6 +291,7 @@
                 'ว่ายน้ำ': 20
             };
 
+            // Get DOM elements
             const quantityInput = document.getElementById('quantity-input');
             const unitSelect = document.getElementById('unit-select');
             const plusBtn = document.getElementById('plus-btn');
@@ -304,6 +306,7 @@
 
             const activityCards = document.querySelectorAll('.activity-card');
 
+            // Function to update all values
             function updateValues() {
                 const quantity = parseFloat(quantityInput.value);
                 const unitMultiplier = parseFloat(unitSelect.value);
@@ -346,53 +349,54 @@
             unitSelect.addEventListener('change', updateValues);
         });
     </script>
-<footer class="py-5 mt-auto bg-dark text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="d-flex align-items-center mb-3">
-                    <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
-                    <h5 class="m-0 text-white">FitMatch</h5>
+    
+    <footer class="py-5 mt-auto bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="assets/img/logo.png" alt="FitMatch Logo" width="30" height="24" class="me-2">
+                        <h5 class="m-0 text-white">FitMatch</h5>
+                    </div>
+                    <p class="small text-white">
+                        ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
+                    </p>
                 </div>
-                <p class="small text-white">
-                    ที่ FitMatch เราเชื่อว่าการออกกำลังกายคือการเดินทางสำหรับทุกคน เรามุ่งมั่นที่จะมอบเครื่องมือและความรู้ที่คุณต้องการเพื่อบรรลุเป้าหมายด้านสุขภาพและการออกกำลังกายของคุณ
-                </p>
-            </div>
 
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 class="text-uppercase mb-4">Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
-                    <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
-                    <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
-                    <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
-                </ul>
-            </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">หน้าแรก</a></li>
+                        <li><a href="Workout Program.html" class="text-white text-decoration-none">โปรแกรมการออกกำลังกาย</a></li>
+                        <li><a href="Calories-dialy.html" class="text-white text-decoration-none">คำนวณแคลอรี่</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="text-uppercase mb-4">About This Project</h5>
-                <p class="small text-white mb-0">
-                    โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
-                </p>
-            </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">About This Project</h5>
+                    <p class="small text-white mb-0">
+                        โปรเจกต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของวิชาการออกแบบและพัฒนาเว็บ เพื่อให้ความรู้และเป็นเครื่องมือช่วยสนับสนุนการออกกำลังกายสำหรับทุกคน
+                    </p>
+                </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 class="text-uppercase mb-4">Contact Us</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
-                    </li>
-                </ul>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-phone-alt me-2 text-white"></i> 083-530-0458
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2 text-white"></i> fitmatch.com@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 border-light">
+            <div class="text-center small" style="color: #A9B1B7;">
+                &copy; 2025 FitMatch. All Rights Reserved.
             </div>
         </div>
-        <hr class="my-4 border-light">
-        <div class="text-center small" style="color: #A9B1B7;">
-    &copy; 2025 FitMatch. All Rights Reserved.
-</div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
